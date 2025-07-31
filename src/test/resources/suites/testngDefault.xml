@@ -2,6 +2,8 @@
 <suite name="Bookstore API Test Suite">
     <listeners>
         <listener class-name="com.bookstore.api.utils.ApiTestConfig"/>
+        <listener class-name="com.bookstore.api.utils.TestExecutionListener"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
     <test name="Book and Author Tests">
         <groups>

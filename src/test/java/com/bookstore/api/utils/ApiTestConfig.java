@@ -4,19 +4,17 @@ import com.bookstore.api.logger.ApiLogger;
 import org.apache.commons.io.output.TeeOutputStream;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class ApiTestConfig implements ISuiteListener {
 
     private PrintStream originalOut;
+    private FileOutputStream fileOut;
+    private TeeOutputStream teeStream;
+    private PrintStream teePrintStream;
 
-    @BeforeSuite
+    @Override
     public void onStart(ISuite suite) {
         ApiLogger.log("🛠️ Starting API Test Suite setup...");
         ApiLogger.log(" ");
@@ -26,9 +24,9 @@ public class ApiTestConfig implements ISuiteListener {
                 reportsDir.mkdirs();
             }
             String consoleLogPath = "reports/api-console.log";
-            FileOutputStream fileOut = new FileOutputStream(consoleLogPath);
-            TeeOutputStream teeStream = new TeeOutputStream(System.out, fileOut);
-            PrintStream teePrintStream = new PrintStream(teeStream, true, StandardCharsets.UTF_8);
+            fileOut = new FileOutputStream(consoleLogPath, true); // true za append
+            teeStream = new TeeOutputStream(System.out, fileOut);
+            teePrintStream = new PrintStream(teeStream, true, StandardCharsets.UTF_8);
             originalOut = System.out;
             System.setOut(teePrintStream);
         } catch (IOException e) {
@@ -36,20 +34,29 @@ public class ApiTestConfig implements ISuiteListener {
         }
     }
 
-    @AfterSuite
+    @Override
     public void onFinish(ISuite suite) {
         ApiLogger.log("✅ Test suite finished.");
+        if (teePrintStream != null) {
+            teePrintStream.flush();
+        }
+        if (fileOut != null) {
+            try {
+                fileOut.flush();
+                fileOut.close();
+            } catch (IOException e) {
+                ApiLogger.log("Error closing log file: " + e.getMessage());
+            }
+        }
+        if (teeStream != null) {
+            try {
+                teeStream.close();
+            } catch (IOException e) {
+                ApiLogger.log("Error closing tee stream: " + e.getMessage());
+            }
+        }
         if (originalOut != null) {
             System.setOut(originalOut);
-        }
-        try {
-            Path allureResultsDir = Paths.get("target/allure-results");
-            if (!Files.exists(allureResultsDir)) {
-                Files.createDirectories(allureResultsDir);
-                ApiLogger.log("📁 Created allure-results directory");
-            }
-        } catch (IOException e) {
-            ApiLogger.log("Error creating allure-results directory: " + e.getMessage());
         }
     }
 }

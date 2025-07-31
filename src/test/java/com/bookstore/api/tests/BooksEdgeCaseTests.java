@@ -63,7 +63,7 @@ public class BooksEdgeCaseTests {
         ApiLogger.log("➕ Attempting to add book with empty body");
         Response response = service.addBookWithEmptyBody();
 
-        assertEquals(response.getStatusCode(), 400);
+        assertEquals(response.getStatusCode(), 400, "Should return 400 for empty body");
     }
 
     @Test(groups = {"regression", "books", "edge"})

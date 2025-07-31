@@ -142,7 +142,21 @@ public class BookTests {
         Response response = service.getAllBooks();
         List<Book> books = Arrays.asList(response.as(Book[].class));
         books = books.stream().sorted(Comparator.comparing(Book::getTitle).reversed()).toList();
-        books.forEach(book -> ApiLogger.log("🔤 " + book.getTitle()));
+        int totalBooks = books.size();
+        ApiLogger.log("📊 Total number of books: " + totalBooks);
+
+        if (!books.isEmpty()) {
+            int firstFiveCount = Math.min(5, books.size());
+            List<Book> firstFive = books.subList(0, firstFiveCount);
+            ApiLogger.log("📋 First 5 books:");
+            firstFive.forEach(ApiLogger::logBook);
+
+            int lastFiveCount = Math.min(5, books.size());
+            int lastFiveStart = Math.max(0, books.size() - 5);
+            List<Book> lastFive = books.subList(lastFiveStart, lastFiveStart + lastFiveCount);
+            ApiLogger.log("📋 Last 5 books:");
+            lastFive.forEach(ApiLogger::logBook);
+        }
 
         assertEquals(response.getStatusCode(), 200, "Should return 200 OK");
         assertTrue(books.size() > 1, "Should have at least two books to sort");

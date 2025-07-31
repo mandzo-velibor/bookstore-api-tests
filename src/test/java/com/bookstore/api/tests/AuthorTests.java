@@ -96,7 +96,20 @@ public class AuthorTests extends ApiBase {
         Response response = service.getAllAuthors();
         List<Author> authors = Arrays.asList(response.as(Author[].class));
         authors = authors.stream().sorted(Comparator.comparing(Author::getLastName)).toList();
-        authors.forEach(author -> ApiLogger.log("🔤 " + author.getLastName()));
+        int totalAuthors = authors.size();
+        ApiLogger.log("📊 Total number of authors: " + totalAuthors);
+        if (!authors.isEmpty()) {
+            int firstFiveCount = Math.min(5, authors.size());
+            List<Author> firstFive = authors.subList(0, firstFiveCount);
+            ApiLogger.log("📋 First 5 authors:");
+            firstFive.forEach(ApiLogger::logAuthor);
+
+            int lastFiveCount = Math.min(5, authors.size());
+            int lastFiveStart = Math.max(0, authors.size() - 5);
+            List<Author> lastFive = authors.subList(lastFiveStart, lastFiveStart + lastFiveCount);
+            ApiLogger.log("📋 Last 5 authors:");
+            lastFive.forEach(ApiLogger::logAuthor);
+        }
         String testMethodName = getCurrentTestMethodName();
         try {
             assertEquals(response.getStatusCode(), 200, "Should return 200 OK");

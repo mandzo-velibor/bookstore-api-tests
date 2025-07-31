@@ -1,7 +1,27 @@
 # Bookstore API Tests
 
-This project contains automated API tests for the FakeRestAPI Bookstore (Books and Authors endpoints) using Java, Maven, RestAssured, TestNG, and Lombok. The tests cover happy path and edge case scenarios, with Allure reporting and GitHub Actions CI/CD integration.
+Welcome to the Bookstore API Tests repository! This project contains automated tests for the Bookstore API using TestNG, Maven, and Allure reporting.
 
+## Running Tests via GitHub Actions
+
+You can easily run the tests using GitHub Actions directly from this repository. Follow these steps:
+
+1. **Navigate to the Actions Tab**:
+    - Go to the [Actions](https://github.com/mandzo-velibor/bookstore-api-tests/actions) tab in this repository.
+
+2. **Trigger Workflow Manually**:
+    - Click on the "Run workflow" button (available under the "Bookstore API Tests CI" workflow).
+    - You will be prompted to choose whether to run the tests **with Docker** or **without Docker**:
+        - Select `true` for `use-docker` to run tests inside a Docker container.
+        - Select `false` for `use-docker` to run tests directly on the GitHub Actions runner.
+    - Click the green "Run workflow" button to start the process.
+
+3. **Check Results**:
+    - Once the workflow completes, you can view the test results and download the Allure report or `api-console.log` from the "Artifacts" section of the workflow run.
+
+This allows you to test the API in different environments without local setup!
+
+---
 ## Prerequisites
 
 - **Java**: JDK 21

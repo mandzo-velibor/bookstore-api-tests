@@ -34,7 +34,7 @@ This allows you to test the API in different environments without local setup!
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mandzo-velibor/bookstore-api-tests
    cd bookstore-api-tests
 
 2. **Install Lombok in IntelliJ IDEA**:

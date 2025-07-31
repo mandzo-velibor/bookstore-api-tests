@@ -1,0 +1,1075 @@
+🏁 Starting test: testAddBookWithEmptyBody
+➕ Attempting to add book with empty body
+✅ Test passed: testAddBookWithEmptyBody
+-------------
+🏁 Starting test: testBooksBoundaryIds
+📊 Testing books boundaries: minId=1, maxId=200
+✅ Test passed: testBooksBoundaryIds
+-------------
+🏁 Starting test: testDeleteBookWithNonExistentId
+🗑️ Attempting to delete book with non-existent ID: 999899999
+Response: 
+❌ Test failed: testDeleteBookWithNonExistentId - Should return 404 for non-existent ID expected [404] but found [200]
+-------------
+🏁 Starting test: testGetBookWithInvalidId
+📖 Attempting to get book with invalid ID: -5
+Response: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.4","title":"Not Found","status":404,"traceId":"00-b765668a8ead554aa0a2689445913e13-fffc5585bd16dd4c-00"}
+✅ Test passed: testGetBookWithInvalidId
+-------------
+🏁 Starting test: testUpdateBookWithNonExistentId
+✏️ Attempting to update non-existent book with ID: 999899999
+Response: {"id":999899999,"title":"Non-existent Book","description":"desc","pageCount":100,"excerpt":"exc","publishDate":"2025-07-30T00:00:00"}
+❌ Test failed: testUpdateBookWithNonExistentId - Should return 404 for non-existent ID expected [404] but found [200]
+-------------
+🏁 Starting test: testAddBookWithFaker
+➕ Created book: 
+📚 Book ID: 0
+   Title: Blood's a Rover
+   Pages: 298
+   Description: Omnis aliquid suscipit voluptates omnis volupta...
+   Excerpt: Labore eius quia. Tenetur voluptatem omnis arch...
+   Publish Date: 2025-07-30T00:00:00
+✅ Test passed: testAddBookWithFaker
+-------------
+🏁 Starting test: testAddUpdateDeleteBook
+➕ Adding book: 
+📚 Book ID: 0
+   Title: Time To Murder And Create
+   Pages: 245
+   Description: Voluptas nobis perferendis dolor quia dolores est.
+   Excerpt: Omnis et ipsam voluptates fuga mollitia ut maxi...
+   Publish Date: 2025-07-30T00:00:00
+✏️ Updating book: 
+📚 Book ID: 0
+   Title: The Doors of Perception
+   Pages: 245
+   Description: Voluptas nobis perferendis dolor quia dolores est.
+   Excerpt: Omnis et ipsam voluptates fuga mollitia ut maxi...
+   Publish Date: 2025-07-30T00:00:00
+🗑️ Deleting book with id: 0
+✅ Test passed: testAddUpdateDeleteBook
+-------------
+🏁 Starting test: testDeleteBookAndVerify
+🗑️ Deleted book with ID: 999899999
+✅ Test passed: testDeleteBookAndVerify
+-------------
+🏁 Starting test: testGetBookById
+📚 Book ID: 1
+   Title: Book 1
+   Pages: 100
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-30T09:24:35.6846698+00:00
+📡 HTTP Response - Status: 200
+   Body: {"id":1,"title":"Book 1","description":"Lorem lorem lorem. Lorem lorem lorem. Lorem lorem lorem.\...
+✅ Test passed: testGetBookById
+-------------
+🏁 Starting test: testGetBooksSortedByTitleDesc
+🔤 Book 99
+🔤 Book 98
+🔤 Book 97
+🔤 Book 96
+🔤 Book 95
+🔤 Book 94
+🔤 Book 93
+🔤 Book 92
+🔤 Book 91
+🔤 Book 90
+🔤 Book 9
+🔤 Book 89
+🔤 Book 88
+🔤 Book 87
+🔤 Book 86
+🔤 Book 85
+🔤 Book 84
+🔤 Book 83
+🔤 Book 82
+🔤 Book 81
+🔤 Book 80
+🔤 Book 8
+🔤 Book 79
+🔤 Book 78
+🔤 Book 77
+🔤 Book 76
+🔤 Book 75
+🔤 Book 74
+🔤 Book 73
+🔤 Book 72
+🔤 Book 71
+🔤 Book 70
+🔤 Book 7
+🔤 Book 69
+🔤 Book 68
+🔤 Book 67
+🔤 Book 66
+🔤 Book 65
+🔤 Book 64
+🔤 Book 63
+🔤 Book 62
+🔤 Book 61
+🔤 Book 60
+🔤 Book 6
+🔤 Book 59
+🔤 Book 58
+🔤 Book 57
+🔤 Book 56
+🔤 Book 55
+🔤 Book 54
+🔤 Book 53
+🔤 Book 52
+🔤 Book 51
+🔤 Book 50
+🔤 Book 5
+🔤 Book 49
+🔤 Book 48
+🔤 Book 47
+🔤 Book 46
+🔤 Book 45
+🔤 Book 44
+🔤 Book 43
+🔤 Book 42
+🔤 Book 41
+🔤 Book 40
+🔤 Book 4
+🔤 Book 39
+🔤 Book 38
+🔤 Book 37
+🔤 Book 36
+🔤 Book 35
+🔤 Book 34
+🔤 Book 33
+🔤 Book 32
+🔤 Book 31
+🔤 Book 30
+🔤 Book 3
+🔤 Book 29
+🔤 Book 28
+🔤 Book 27
+🔤 Book 26
+🔤 Book 25
+🔤 Book 24
+🔤 Book 23
+🔤 Book 22
+🔤 Book 21
+🔤 Book 200
+🔤 Book 20
+🔤 Book 2
+🔤 Book 199
+🔤 Book 198
+🔤 Book 197
+🔤 Book 196
+🔤 Book 195
+🔤 Book 194
+🔤 Book 193
+🔤 Book 192
+🔤 Book 191
+🔤 Book 190
+🔤 Book 19
+🔤 Book 189
+🔤 Book 188
+🔤 Book 187
+🔤 Book 186
+🔤 Book 185
+🔤 Book 184
+🔤 Book 183
+🔤 Book 182
+🔤 Book 181
+🔤 Book 180
+🔤 Book 18
+🔤 Book 179
+🔤 Book 178
+🔤 Book 177
+🔤 Book 176
+🔤 Book 175
+🔤 Book 174
+🔤 Book 173
+🔤 Book 172
+🔤 Book 171
+🔤 Book 170
+🔤 Book 17
+🔤 Book 169
+🔤 Book 168
+🔤 Book 167
+🔤 Book 166
+🔤 Book 165
+🔤 Book 164
+🔤 Book 163
+🔤 Book 162
+🔤 Book 161
+🔤 Book 160
+🔤 Book 16
+🔤 Book 159
+🔤 Book 158
+🔤 Book 157
+🔤 Book 156
+🔤 Book 155
+🔤 Book 154
+🔤 Book 153
+🔤 Book 152
+🔤 Book 151
+🔤 Book 150
+🔤 Book 15
+🔤 Book 149
+🔤 Book 148
+🔤 Book 147
+🔤 Book 146
+🔤 Book 145
+🔤 Book 144
+🔤 Book 143
+🔤 Book 142
+🔤 Book 141
+🔤 Book 140
+🔤 Book 14
+🔤 Book 139
+🔤 Book 138
+🔤 Book 137
+🔤 Book 136
+🔤 Book 135
+🔤 Book 134
+🔤 Book 133
+🔤 Book 132
+🔤 Book 131
+🔤 Book 130
+🔤 Book 13
+🔤 Book 129
+🔤 Book 128
+🔤 Book 127
+🔤 Book 126
+🔤 Book 125
+🔤 Book 124
+🔤 Book 123
+🔤 Book 122
+🔤 Book 121
+🔤 Book 120
+🔤 Book 12
+🔤 Book 119
+🔤 Book 118
+🔤 Book 117
+🔤 Book 116
+🔤 Book 115
+🔤 Book 114
+🔤 Book 113
+🔤 Book 112
+🔤 Book 111
+🔤 Book 110
+🔤 Book 11
+🔤 Book 109
+🔤 Book 108
+🔤 Book 107
+🔤 Book 106
+🔤 Book 105
+🔤 Book 104
+🔤 Book 103
+🔤 Book 102
+🔤 Book 101
+🔤 Book 100
+🔤 Book 10
+🔤 Book 1
+✅ Test passed: testGetBooksSortedByTitleDesc
+-------------
+🏁 Starting test: testListAllBooks
+📊 Total number of books: 200
+📋 First 5 books:
+📚 Book ID: 1
+   Title: Book 1
+   Pages: 100
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-30T09:24:36.1915892+00:00
+📚 Book ID: 2
+   Title: Book 2
+   Pages: 200
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-29T09:24:36.1916034+00:00
+📚 Book ID: 3
+   Title: Book 3
+   Pages: 300
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-28T09:24:36.1916138+00:00
+📚 Book ID: 4
+   Title: Book 4
+   Pages: 400
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-27T09:24:36.1916238+00:00
+📚 Book ID: 5
+   Title: Book 5
+   Pages: 500
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-26T09:24:36.1916359+00:00
+📋 Last 5 books:
+📚 Book ID: 196
+   Title: Book 196
+   Pages: 19600
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-01-16T09:24:36.194067+00:00
+📚 Book ID: 197
+   Title: Book 197
+   Pages: 19700
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-01-15T09:24:36.1940788+00:00
+📚 Book ID: 198
+   Title: Book 198
+   Pages: 19800
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-01-14T09:24:36.1941053+00:00
+📚 Book ID: 199
+   Title: Book 199
+   Pages: 19900
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-01-13T09:24:36.1941325+00:00
+📚 Book ID: 200
+   Title: Book 200
+   Pages: 20000
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-01-12T09:24:36.1941445+00:00
+✅ Test passed: testListAllBooks
+-------------
+🏁 Starting test: testUpdateBookAndVerify
+✏️ Updated book: 
+📚 Book ID: 999899999
+   Title: I Sing the Body Electric
+   Pages: 422
+   Description: Voluptatem totam optio commodi.
+   Excerpt: Eius explicabo sit beatae. Molestiae nihil ut d...
+   Publish Date: 2025-07-30T00:00:00
+✅ Test passed: testUpdateBookAndVerify
+-------------
+🏁 Starting test: testAddAuthorWithEmptyBody
+➕ Attempting to add author with empty body
+✅ Test passed: testAddAuthorWithEmptyBody
+-------------
+🏁 Starting test: testAddAuthorWithInvalidIdBook
+➕ Attempting to add author with invalid idBook: 
+👤 Author ID: 0
+   Book ID: -5
+   First Name: John
+   Last Name: Doe
+❌ Test failed: testAddAuthorWithInvalidIdBook - Should return 400 for invalid idBook expected [400] but found [200]
+-------------
+🏁 Starting test: testAuthorsBoundaryIds
+📊 Testing authors boundaries: minId=1, maxId=592
+❌ Test failed: testAuthorsBoundaryIds - Should return 404 for ID above max expected [404] but found [200]
+-------------
+🏁 Starting test: testDeleteAuthorWithNonExistentId
+🗑️ Attempting to delete author with non-existent ID: 999899999
+❌ Test failed: testDeleteAuthorWithNonExistentId - Should return 404 for non-existent ID expected [404] but found [200]
+-------------
+🏁 Starting test: testGetAuthorWithInvalidId
+👤 Attempting to get author with invalid ID: -5
+✅ Test passed: testGetAuthorWithInvalidId
+-------------
+🏁 Starting test: testGetAuthorWithNonExistentId
+👤 Attempting to get author with non-existent ID: 999899999
+✅ Test passed: testGetAuthorWithNonExistentId
+-------------
+🏁 Starting test: testUpdateAuthorWithNonExistentId
+✏️ Attempting to update non-existent author with ID: 999899999
+❌ Test failed: testUpdateAuthorWithNonExistentId - Should return 404 for non-existent ID expected [404] but found [200]
+-------------
+🏁 Starting test: testAddAuthor
+➕ Created author: 
+👤 Author ID: 0
+   Book ID: 1
+   First Name: Jong
+   Last Name: Raynor
+✅ Test passed: testAddAuthor
+-------------
+🏁 Starting test: testAuthorsByBookId 1
+📚 Book ID: 1
+   Title: Book 1
+   Pages: 100
+   Description: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Excerpt: Lorem lorem lorem. Lorem lorem lorem. Lorem lor...
+   Publish Date: 2025-07-30T09:24:38.6832384+00:00
+👤 Author ID: 1
+   Book ID: 1
+   First Name: First Name 1
+   Last Name: Last Name 1
+👤 Author ID: 2
+   Book ID: 1
+   First Name: First Name 2
+   Last Name: Last Name 2
+✅ Test passed: testAuthorsByBookId
+-------------
+🏁 Starting test: testAuthorsSortedByLastName
+🔤 Last Name 1
+🔤 Last Name 10
+🔤 Last Name 100
+🔤 Last Name 101
+🔤 Last Name 102
+🔤 Last Name 103
+🔤 Last Name 104
+🔤 Last Name 105
+🔤 Last Name 106
+🔤 Last Name 107
+🔤 Last Name 108
+🔤 Last Name 109
+🔤 Last Name 11
+🔤 Last Name 110
+🔤 Last Name 111
+🔤 Last Name 112
+🔤 Last Name 113
+🔤 Last Name 114
+🔤 Last Name 115
+🔤 Last Name 116
+🔤 Last Name 117
+🔤 Last Name 118
+🔤 Last Name 119
+🔤 Last Name 12
+🔤 Last Name 120
+🔤 Last Name 121
+🔤 Last Name 122
+🔤 Last Name 123
+🔤 Last Name 124
+🔤 Last Name 125
+🔤 Last Name 126
+🔤 Last Name 127
+🔤 Last Name 128
+🔤 Last Name 129
+🔤 Last Name 13
+🔤 Last Name 130
+🔤 Last Name 131
+🔤 Last Name 132
+🔤 Last Name 133
+🔤 Last Name 134
+🔤 Last Name 135
+🔤 Last Name 136
+🔤 Last Name 137
+🔤 Last Name 138
+🔤 Last Name 139
+🔤 Last Name 14
+🔤 Last Name 140
+🔤 Last Name 141
+🔤 Last Name 142
+🔤 Last Name 143
+🔤 Last Name 144
+🔤 Last Name 145
+🔤 Last Name 146
+🔤 Last Name 147
+🔤 Last Name 148
+🔤 Last Name 149
+🔤 Last Name 15
+🔤 Last Name 150
+🔤 Last Name 151
+🔤 Last Name 152
+🔤 Last Name 153
+🔤 Last Name 154
+🔤 Last Name 155
+🔤 Last Name 156
+🔤 Last Name 157
+🔤 Last Name 158
+🔤 Last Name 159
+🔤 Last Name 16
+🔤 Last Name 160
+🔤 Last Name 161
+🔤 Last Name 162
+🔤 Last Name 163
+🔤 Last Name 164
+🔤 Last Name 165
+🔤 Last Name 166
+🔤 Last Name 167
+🔤 Last Name 168
+🔤 Last Name 169
+🔤 Last Name 17
+🔤 Last Name 170
+🔤 Last Name 171
+🔤 Last Name 172
+🔤 Last Name 173
+🔤 Last Name 174
+🔤 Last Name 175
+🔤 Last Name 176
+🔤 Last Name 177
+🔤 Last Name 178
+🔤 Last Name 179
+🔤 Last Name 18
+🔤 Last Name 180
+🔤 Last Name 181
+🔤 Last Name 182
+🔤 Last Name 183
+🔤 Last Name 184
+🔤 Last Name 185
+🔤 Last Name 186
+🔤 Last Name 187
+🔤 Last Name 188
+🔤 Last Name 189
+🔤 Last Name 19
+🔤 Last Name 190
+🔤 Last Name 191
+🔤 Last Name 192
+🔤 Last Name 193
+🔤 Last Name 194
+🔤 Last Name 195
+🔤 Last Name 196
+🔤 Last Name 197
+🔤 Last Name 198
+🔤 Last Name 199
+🔤 Last Name 2
+🔤 Last Name 20
+🔤 Last Name 200
+🔤 Last Name 201
+🔤 Last Name 202
+🔤 Last Name 203
+🔤 Last Name 204
+🔤 Last Name 205
+🔤 Last Name 206
+🔤 Last Name 207
+🔤 Last Name 208
+🔤 Last Name 209
+🔤 Last Name 21
+🔤 Last Name 210
+🔤 Last Name 211
+🔤 Last Name 212
+🔤 Last Name 213
+🔤 Last Name 214
+🔤 Last Name 215
+🔤 Last Name 216
+🔤 Last Name 217
+🔤 Last Name 218
+🔤 Last Name 219
+🔤 Last Name 22
+🔤 Last Name 220
+🔤 Last Name 221
+🔤 Last Name 222
+🔤 Last Name 223
+🔤 Last Name 224
+🔤 Last Name 225
+🔤 Last Name 226
+🔤 Last Name 227
+🔤 Last Name 228
+🔤 Last Name 229
+🔤 Last Name 23
+🔤 Last Name 230
+🔤 Last Name 231
+🔤 Last Name 232
+🔤 Last Name 233
+🔤 Last Name 234
+🔤 Last Name 235
+🔤 Last Name 236
+🔤 Last Name 237
+🔤 Last Name 238
+🔤 Last Name 239
+🔤 Last Name 24
+🔤 Last Name 240
+🔤 Last Name 241
+🔤 Last Name 242
+🔤 Last Name 243
+🔤 Last Name 244
+🔤 Last Name 245
+🔤 Last Name 246
+🔤 Last Name 247
+🔤 Last Name 248
+🔤 Last Name 249
+🔤 Last Name 25
+🔤 Last Name 250
+🔤 Last Name 251
+🔤 Last Name 252
+🔤 Last Name 253
+🔤 Last Name 254
+🔤 Last Name 255
+🔤 Last Name 256
+🔤 Last Name 257
+🔤 Last Name 258
+🔤 Last Name 259
+🔤 Last Name 26
+🔤 Last Name 260
+🔤 Last Name 261
+🔤 Last Name 262
+🔤 Last Name 263
+🔤 Last Name 264
+🔤 Last Name 265
+🔤 Last Name 266
+🔤 Last Name 267
+🔤 Last Name 268
+🔤 Last Name 269
+🔤 Last Name 27
+🔤 Last Name 270
+🔤 Last Name 271
+🔤 Last Name 272
+🔤 Last Name 273
+🔤 Last Name 274
+🔤 Last Name 275
+🔤 Last Name 276
+🔤 Last Name 277
+🔤 Last Name 278
+🔤 Last Name 279
+🔤 Last Name 28
+🔤 Last Name 280
+🔤 Last Name 281
+🔤 Last Name 282
+🔤 Last Name 283
+🔤 Last Name 284
+🔤 Last Name 285
+🔤 Last Name 286
+🔤 Last Name 287
+🔤 Last Name 288
+🔤 Last Name 289
+🔤 Last Name 29
+🔤 Last Name 290
+🔤 Last Name 291
+🔤 Last Name 292
+🔤 Last Name 293
+🔤 Last Name 294
+🔤 Last Name 295
+🔤 Last Name 296
+🔤 Last Name 297
+🔤 Last Name 298
+🔤 Last Name 299
+🔤 Last Name 3
+🔤 Last Name 30
+🔤 Last Name 300
+🔤 Last Name 301
+🔤 Last Name 302
+🔤 Last Name 303
+🔤 Last Name 304
+🔤 Last Name 305
+🔤 Last Name 306
+🔤 Last Name 307
+🔤 Last Name 308
+🔤 Last Name 309
+🔤 Last Name 31
+🔤 Last Name 310
+🔤 Last Name 311
+🔤 Last Name 312
+🔤 Last Name 313
+🔤 Last Name 314
+🔤 Last Name 315
+🔤 Last Name 316
+🔤 Last Name 317
+🔤 Last Name 318
+🔤 Last Name 319
+🔤 Last Name 32
+🔤 Last Name 320
+🔤 Last Name 321
+🔤 Last Name 322
+🔤 Last Name 323
+🔤 Last Name 324
+🔤 Last Name 325
+🔤 Last Name 326
+🔤 Last Name 327
+🔤 Last Name 328
+🔤 Last Name 329
+🔤 Last Name 33
+🔤 Last Name 330
+🔤 Last Name 331
+🔤 Last Name 332
+🔤 Last Name 333
+🔤 Last Name 334
+🔤 Last Name 335
+🔤 Last Name 336
+🔤 Last Name 337
+🔤 Last Name 338
+🔤 Last Name 339
+🔤 Last Name 34
+🔤 Last Name 340
+🔤 Last Name 341
+🔤 Last Name 342
+🔤 Last Name 343
+🔤 Last Name 344
+🔤 Last Name 345
+🔤 Last Name 346
+🔤 Last Name 347
+🔤 Last Name 348
+🔤 Last Name 349
+🔤 Last Name 35
+🔤 Last Name 350
+🔤 Last Name 351
+🔤 Last Name 352
+🔤 Last Name 353
+🔤 Last Name 354
+🔤 Last Name 355
+🔤 Last Name 356
+🔤 Last Name 357
+🔤 Last Name 358
+🔤 Last Name 359
+🔤 Last Name 36
+🔤 Last Name 360
+🔤 Last Name 361
+🔤 Last Name 362
+🔤 Last Name 363
+🔤 Last Name 364
+🔤 Last Name 365
+🔤 Last Name 366
+🔤 Last Name 367
+🔤 Last Name 368
+🔤 Last Name 369
+🔤 Last Name 37
+🔤 Last Name 370
+🔤 Last Name 371
+🔤 Last Name 372
+🔤 Last Name 373
+🔤 Last Name 374
+🔤 Last Name 375
+🔤 Last Name 376
+🔤 Last Name 377
+🔤 Last Name 378
+🔤 Last Name 379
+🔤 Last Name 38
+🔤 Last Name 380
+🔤 Last Name 381
+🔤 Last Name 382
+🔤 Last Name 383
+🔤 Last Name 384
+🔤 Last Name 385
+🔤 Last Name 386
+🔤 Last Name 387
+🔤 Last Name 388
+🔤 Last Name 389
+🔤 Last Name 39
+🔤 Last Name 390
+🔤 Last Name 391
+🔤 Last Name 392
+🔤 Last Name 393
+🔤 Last Name 394
+🔤 Last Name 395
+🔤 Last Name 396
+🔤 Last Name 397
+🔤 Last Name 398
+🔤 Last Name 399
+🔤 Last Name 4
+🔤 Last Name 40
+🔤 Last Name 400
+🔤 Last Name 401
+🔤 Last Name 402
+🔤 Last Name 403
+🔤 Last Name 404
+🔤 Last Name 405
+🔤 Last Name 406
+🔤 Last Name 407
+🔤 Last Name 408
+🔤 Last Name 409
+🔤 Last Name 41
+🔤 Last Name 410
+🔤 Last Name 411
+🔤 Last Name 412
+🔤 Last Name 413
+🔤 Last Name 414
+🔤 Last Name 415
+🔤 Last Name 416
+🔤 Last Name 417
+🔤 Last Name 418
+🔤 Last Name 419
+🔤 Last Name 42
+🔤 Last Name 420
+🔤 Last Name 421
+🔤 Last Name 422
+🔤 Last Name 423
+🔤 Last Name 424
+🔤 Last Name 425
+🔤 Last Name 426
+🔤 Last Name 427
+🔤 Last Name 428
+🔤 Last Name 429
+🔤 Last Name 43
+🔤 Last Name 430
+🔤 Last Name 431
+🔤 Last Name 432
+🔤 Last Name 433
+🔤 Last Name 434
+🔤 Last Name 435
+🔤 Last Name 436
+🔤 Last Name 437
+🔤 Last Name 438
+🔤 Last Name 439
+🔤 Last Name 44
+🔤 Last Name 440
+🔤 Last Name 441
+🔤 Last Name 442
+🔤 Last Name 443
+🔤 Last Name 444
+🔤 Last Name 445
+🔤 Last Name 446
+🔤 Last Name 447
+🔤 Last Name 448
+🔤 Last Name 449
+🔤 Last Name 45
+🔤 Last Name 450
+🔤 Last Name 451
+🔤 Last Name 452
+🔤 Last Name 453
+🔤 Last Name 454
+🔤 Last Name 455
+🔤 Last Name 456
+🔤 Last Name 457
+🔤 Last Name 458
+🔤 Last Name 459
+🔤 Last Name 46
+🔤 Last Name 460
+🔤 Last Name 461
+🔤 Last Name 462
+🔤 Last Name 463
+🔤 Last Name 464
+🔤 Last Name 465
+🔤 Last Name 466
+🔤 Last Name 467
+🔤 Last Name 468
+🔤 Last Name 469
+🔤 Last Name 47
+🔤 Last Name 470
+🔤 Last Name 471
+🔤 Last Name 472
+🔤 Last Name 473
+🔤 Last Name 474
+🔤 Last Name 475
+🔤 Last Name 476
+🔤 Last Name 477
+🔤 Last Name 478
+🔤 Last Name 479
+🔤 Last Name 48
+🔤 Last Name 480
+🔤 Last Name 481
+🔤 Last Name 482
+🔤 Last Name 483
+🔤 Last Name 484
+🔤 Last Name 485
+🔤 Last Name 486
+🔤 Last Name 487
+🔤 Last Name 488
+🔤 Last Name 489
+🔤 Last Name 49
+🔤 Last Name 490
+🔤 Last Name 491
+🔤 Last Name 492
+🔤 Last Name 493
+🔤 Last Name 494
+🔤 Last Name 495
+🔤 Last Name 496
+🔤 Last Name 497
+🔤 Last Name 498
+🔤 Last Name 499
+🔤 Last Name 5
+🔤 Last Name 50
+🔤 Last Name 500
+🔤 Last Name 501
+🔤 Last Name 502
+🔤 Last Name 503
+🔤 Last Name 504
+🔤 Last Name 505
+🔤 Last Name 506
+🔤 Last Name 507
+🔤 Last Name 508
+🔤 Last Name 509
+🔤 Last Name 51
+🔤 Last Name 510
+🔤 Last Name 511
+🔤 Last Name 512
+🔤 Last Name 513
+🔤 Last Name 514
+🔤 Last Name 515
+🔤 Last Name 516
+🔤 Last Name 517
+🔤 Last Name 518
+🔤 Last Name 519
+🔤 Last Name 52
+🔤 Last Name 520
+🔤 Last Name 521
+🔤 Last Name 522
+🔤 Last Name 523
+🔤 Last Name 524
+🔤 Last Name 525
+🔤 Last Name 526
+🔤 Last Name 527
+🔤 Last Name 528
+🔤 Last Name 529
+🔤 Last Name 53
+🔤 Last Name 530
+🔤 Last Name 531
+🔤 Last Name 532
+🔤 Last Name 533
+🔤 Last Name 534
+🔤 Last Name 535
+🔤 Last Name 536
+🔤 Last Name 537
+🔤 Last Name 538
+🔤 Last Name 539
+🔤 Last Name 54
+🔤 Last Name 540
+🔤 Last Name 541
+🔤 Last Name 542
+🔤 Last Name 543
+🔤 Last Name 544
+🔤 Last Name 545
+🔤 Last Name 546
+🔤 Last Name 547
+🔤 Last Name 548
+🔤 Last Name 549
+🔤 Last Name 55
+🔤 Last Name 550
+🔤 Last Name 551
+🔤 Last Name 552
+🔤 Last Name 553
+🔤 Last Name 554
+🔤 Last Name 555
+🔤 Last Name 556
+🔤 Last Name 557
+🔤 Last Name 558
+🔤 Last Name 559
+🔤 Last Name 56
+🔤 Last Name 560
+🔤 Last Name 561
+🔤 Last Name 562
+🔤 Last Name 563
+🔤 Last Name 564
+🔤 Last Name 565
+🔤 Last Name 566
+🔤 Last Name 567
+🔤 Last Name 568
+🔤 Last Name 569
+🔤 Last Name 57
+🔤 Last Name 570
+🔤 Last Name 571
+🔤 Last Name 572
+🔤 Last Name 573
+🔤 Last Name 574
+🔤 Last Name 575
+🔤 Last Name 576
+🔤 Last Name 577
+🔤 Last Name 578
+🔤 Last Name 579
+🔤 Last Name 58
+🔤 Last Name 580
+🔤 Last Name 581
+🔤 Last Name 582
+🔤 Last Name 583
+🔤 Last Name 584
+🔤 Last Name 585
+🔤 Last Name 586
+🔤 Last Name 587
+🔤 Last Name 588
+🔤 Last Name 589
+🔤 Last Name 59
+🔤 Last Name 590
+🔤 Last Name 591
+🔤 Last Name 592
+🔤 Last Name 593
+🔤 Last Name 594
+🔤 Last Name 595
+🔤 Last Name 596
+🔤 Last Name 597
+🔤 Last Name 598
+🔤 Last Name 599
+🔤 Last Name 6
+🔤 Last Name 60
+🔤 Last Name 600
+🔤 Last Name 601
+🔤 Last Name 602
+🔤 Last Name 603
+🔤 Last Name 61
+🔤 Last Name 62
+🔤 Last Name 63
+🔤 Last Name 64
+🔤 Last Name 65
+🔤 Last Name 66
+🔤 Last Name 67
+🔤 Last Name 68
+🔤 Last Name 69
+🔤 Last Name 7
+🔤 Last Name 70
+🔤 Last Name 71
+🔤 Last Name 72
+🔤 Last Name 73
+🔤 Last Name 74
+🔤 Last Name 75
+🔤 Last Name 76
+🔤 Last Name 77
+🔤 Last Name 78
+🔤 Last Name 79
+🔤 Last Name 8
+🔤 Last Name 80
+🔤 Last Name 81
+🔤 Last Name 82
+🔤 Last Name 83
+🔤 Last Name 84
+🔤 Last Name 85
+🔤 Last Name 86
+🔤 Last Name 87
+🔤 Last Name 88
+🔤 Last Name 89
+🔤 Last Name 9
+🔤 Last Name 90
+🔤 Last Name 91
+🔤 Last Name 92
+🔤 Last Name 93
+🔤 Last Name 94
+🔤 Last Name 95
+🔤 Last Name 96
+🔤 Last Name 97
+🔤 Last Name 98
+🔤 Last Name 99
+✅ Test passed: testAuthorsSortedByLastName
+-------------
+🏁 Starting test: testDeleteAuthorAndVerify
+🗑️ Deleted author with ID: 999899999
+✅ Test passed: testDeleteAuthorAndVerify
+-------------
+🏁 Starting test: testGetAuthorById
+👤 Retrieved author: 
+👤 Author ID: 1
+   Book ID: 1
+   First Name: First Name 1
+   Last Name: Last Name 1
+✅ Test passed: testGetAuthorById
+-------------
+🏁 Starting test: testListAllAuthors
+📊 Total number of authors: 600
+📋 First 5 authors:
+👤 Author ID: 1
+   Book ID: 1
+   First Name: First Name 1
+   Last Name: Last Name 1
+👤 Author ID: 2
+   Book ID: 1
+   First Name: First Name 2
+   Last Name: Last Name 2
+👤 Author ID: 3
+   Book ID: 1
+   First Name: First Name 3
+   Last Name: Last Name 3
+👤 Author ID: 4
+   Book ID: 1
+   First Name: First Name 4
+   Last Name: Last Name 4
+👤 Author ID: 5
+   Book ID: 2
+   First Name: First Name 5
+   Last Name: Last Name 5
+📋 Last 5 authors:
+👤 Author ID: 596
+   Book ID: 199
+   First Name: First Name 596
+   Last Name: Last Name 596
+👤 Author ID: 597
+   Book ID: 199
+   First Name: First Name 597
+   Last Name: Last Name 597
+👤 Author ID: 598
+   Book ID: 199
+   First Name: First Name 598
+   Last Name: Last Name 598
+👤 Author ID: 599
+   Book ID: 200
+   First Name: First Name 599
+   Last Name: Last Name 599
+👤 Author ID: 600
+   Book ID: 200
+   First Name: First Name 600
+   Last Name: Last Name 600
+✅ Test passed: testListAllAuthors
+-------------
+🏁 Starting test: testUpdateAuthor
+✏️ Updated author: 
+👤 Author ID: 999899999
+   Book ID: 1
+   First Name: Alvaro
+   Last Name: Gusikowski
+✅ Test passed: testUpdateAuthor
+-------------
+✅ Test suite finished.

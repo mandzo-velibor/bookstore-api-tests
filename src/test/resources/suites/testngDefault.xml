@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bookstore API Test Suite">
+    <listeners>
+        <listener class-name="com.bookstore.api.utils.ApiTestConfig"/>
+    </listeners>
+    <test name="Book and Author Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+                <include name="books"/>
+                <include name="edge"/>
+                <include name="authors"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.bookstore.api.tests"/>
+        </packages>
+    </test>
+</suite>

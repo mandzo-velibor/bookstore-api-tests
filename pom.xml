@@ -216,6 +216,7 @@
           <reportVersion>${allure.version}</reportVersion>
           <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
           <reportDirectory>${project.build.directory}/site/allure-maven-plugin</reportDirectory>
+          <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.27.0/allure-commandline-2.27.0.zip</allureDownloadUrl>
         </configuration>
         <executions>
           <execution>

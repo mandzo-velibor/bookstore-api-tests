@@ -60,10 +60,6 @@ jobs:
         if: github.event.inputs.use-docker == 'false' || contains(github.event.inputs.use-docker, 'false')
         run: mvn verify -P ApiTests
 
-      - name: Generate Allure report
-        if: always()
-        run: mvn allure:report
-
       - name: Upload Allure report
         if: always()
         uses: actions/upload-artifact@v4

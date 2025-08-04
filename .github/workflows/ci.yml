@@ -54,11 +54,11 @@ jobs:
             --network host \
             -w /app \
             bookstore-api-tests \
-            mvn -ntp clean verify -P ApiTests
+            mvn -ntp verify -P ApiTests
 
       - name: Run tests (without Docker)
         if: github.event.inputs.use-docker == 'false' || contains(github.event.inputs.use-docker, 'false') || github.event_name != 'workflow_dispatch'
-        run: mvn -ntp clean verify -P ApiTests
+        run: mvn -ntp verify -P ApiTests
 
       - name: Upload Allure report
         if: always()

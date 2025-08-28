@@ -78,8 +78,11 @@ public class BookTests {
                 "2025-07-30T00:00:00");
         ApiLogger.log("➕ Adding book: ");
         ApiLogger.logBook(newBook);
-
         Response addResponse = service.addBook(newBook);
+        Book addedBook = addResponse.as(Book.class);
+        ApiLogger.log(" Added book: ");
+        ApiLogger.logBook(addedBook);
+        assertEquals(addedBook,newBook);
         newBook.setTitle(faker.book().title());
         ApiLogger.log("✏️ Updating book: ");
         ApiLogger.logBook(newBook);
@@ -98,6 +101,8 @@ public class BookTests {
                 faker.lorem().sentence(), faker.lorem().paragraph(),
                 "2025-07-30T00:00:00");
         Response addResponse = service.addBook(newBook);
+        Book addedBook = addResponse.as(Book.class);
+        assertEquals(addedBook,newBook);
         newBook.setTitle(faker.book().title());
         Response response = service.updateBook(newBook.getId(), newBook);
         Book updatedBook = response.as(Book.class);
@@ -106,18 +111,20 @@ public class BookTests {
 
         assertEquals(addResponse.getStatusCode(), 200);
         assertEquals(response.getStatusCode(), 200);
-        assertEquals(updatedBook.getTitle(), newBook.getTitle(), "Updated title should match");
+        assertEquals(updatedBook.getTitle(), addedBook.getTitle(), "Updated title should match");
     }
 
     @Test(groups = {"regression", "books"})
     public void testDeleteBookAndVerify() {
-        Book newBook = new Book(Constants.NON_EXISTENT_ID, faker.book().title(), faker.number().numberBetween(100, 500),
+        Book newBook = new Book(13579, faker.book().title(), faker.number().numberBetween(100, 500),
                 faker.lorem().sentence(), faker.lorem().paragraph(),
                 "2025-07-30T00:00:00");
         Response addResponse = service.addBook(newBook);
+        Response checkAddedBook = service.getBookById(newBook.getId());
+        Book addedBook = checkAddedBook.as(Book.class);
+        assertEquals(addedBook.getId(), 13579);
         Response deleteResponse = service.deleteBook(newBook.getId());
         ApiLogger.log("🗑️ Deleted book with ID: " + newBook.getId());
-
         assertEquals(addResponse.getStatusCode(), 200);
         assertEquals(deleteResponse.getStatusCode(), 200);
         Response getResponse = service.getBookById(newBook.getId());
@@ -133,7 +140,10 @@ public class BookTests {
         Book createdBook = response.as(Book.class);
         ApiLogger.log("➕ Created book: ");
         ApiLogger.logBook(createdBook);
-
+        Book book = response.as(Book.class);
+        ApiLogger.log(" Retrieved created book: ");
+        ApiLogger.logBook(book);
+        assertEquals(book,newBook);
         assertEquals(response.getStatusCode(), 200);
     }
 
